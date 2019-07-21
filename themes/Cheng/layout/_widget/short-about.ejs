@@ -1,0 +1,77 @@
+<!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="<%= config.root %>about/">ABOUT ME</a></h5>
+    <div class="short-about">
+        <% if(theme['sidebar-avatar']) { %>
+            <img id = "avatar_pic" src="<%= theme['sidebar-avatar'] %>" />
+        <% } %>
+
+        <% if(theme['sidebar-about-description']) { %>
+            <p><%= theme['sidebar-about-description'] %></p>
+        <% }%>
+
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            <% if (theme.twitter_username) { %>
+                <li>
+                    <a target="_blank" href="https://twitter.com/<%= theme.twitter_username %>">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.zhihu_username) { %>
+                <li>
+                    <a target="_blank" href="https://www.zhihu.com/people/<%= theme.zhihu_username %>">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                        </span>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.weibo_username) { %>
+                <li>
+                    <a target="_blank" href="http://weibo.com/<%= theme.weibo_username %>">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.facebook_username) { %>
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/<%= theme.facebook_username %>">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.github_username) { %>
+                <li>
+                    <a target="_blank"  href="https://github.com/<%= theme.github_username %>">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            <% } %>            
+            <% if (theme.linkedin_username) { %>
+                <li>
+                    <a target="_blank"  href="https://www.linkedin.com/in/<%= theme.linkedin_username %>">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</section>

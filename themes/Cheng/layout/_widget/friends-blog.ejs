@@ -1,0 +1,11 @@
+<!-- Friends Blog -->
+<% if(theme.friends) { %>
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+
+    <% theme.friends.forEach(function(friend){ %>
+        <li><a href="<%= friend.href %>" target="_blank"><%= friend.title %></a></li>
+    <% }); %>
+</ul>
+<% }%>

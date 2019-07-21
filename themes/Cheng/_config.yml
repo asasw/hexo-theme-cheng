@@ -1,0 +1,87 @@
+# Code Highlight theme
+# Available value:
+#    normal | night | night yilia | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+# night yilia - https://github.com/litten/hexo-theme-yilia
+highlight_theme: night eighties
+
+# Background Picture
+header-img: /img/home-bg.jpg
+article-img: /img/article-bg.jpg
+
+# Site Setting
+home_posts_tag: true # show posts tags
+nav_menu: [
+    {
+        title: "About",
+        href: "/about/"
+    },
+    {
+        title: "Archives",
+        href: "/archive/"
+    }
+    ,
+    {
+        title: "Tags",
+        href: "/tags/"
+    }
+]
+
+# 不蒜子网页计数器
+busuanzi: true
+
+# Sidebar settings
+sidebar: true                     # whether or not using Sidebar.
+sidebar-about-description: "life sucks, such is life"
+sidebar-avatar: /img/avatar.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
+widgets:
+- short-about
+- featured-tags
+- recent-posts
+- archive
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 0              # A tag will be featured if the size of it is more than this condition value
+
+# Friends
+# friends: []
+
+# SNS settings
+# weibo_username: 
+# zhihu_username: 
+# github_username: asasw
+# twitter_username: 
+# facebook_username: 
+# linkedin_username: 
+
+# Archive
+archives-img: /img/header_img/archives-widget.jpg
+archive_type: 'monthly'
+show_count: true
+
+# Google Analytics
+ga_track_id: 'UA-131396650-1'          # Format: UA-xxxxxx-xx
+ga_domain: cheng.cf
+# Baidu Tongji
+bd_track_id: 056faddb58d69cf7e6d643a0971e4427
+
+# Reward
+reward: true
+reward_comment: 赞赏一下
+wechatpay: /img/wechat.jpg
+alipay: /img/alipay.jpg
+
+# Share
+# Reference: https://github.com/overtrue/share.js
+share: true
+
+# 来必力
+livere_uid: MTAyMC80NTE5Mi8yMTcwOA==
+
+
+# Build settings
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+# Progressive Web Apps
+chrome_tab_theme_color: #000000

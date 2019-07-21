@@ -1,0 +1,86 @@
+---
+layout: layout
+---
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <% if(theme.sidebar == false) { %>
+<!-- NO SIDEBAR -->
+    <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+                <%- page.content || body %>
+            </div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                <% if(theme['featured-tags']) { %>
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="<%= config.root %>tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        <% site.tags.map(function(tag){  %>
+                            <% if(tag.length > theme['featured-condition-size']) { %>
+                            <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>
+                            <% } %>
+                        <% }) %>
+                    </div>
+                </section>
+                <% }%>
+
+                <!-- Friends Blog -->
+                <%- partial('_widget/friends-blog') %>
+            </div>
+        <%} else { %>
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <%- page.content || body %>
+
+                <br>
+
+                <!-- 如果开启评论功能 -->
+                <% if(page.comments) { %>
+                    <hr>
+                    <% if(theme['livere_uid']) { %>
+                        <div class="comment">
+                            <!-- 来必力City版安装代码 -->
+                            <div id="lv-container" data-id="city" data-uid="<%= theme['livere_uid'] %>">
+                                <script type="text/javascript">
+                                    (function(d, s) {
+                                        var j, e = d.getElementsByTagName(s)[0];
+                                 
+                                        if (typeof LivereTower === 'function') { return; }
+                                 
+                                        j = d.createElement(s);
+                                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                        j.async = true;
+                                 
+                                        e.parentNode.insertBefore(j, e);
+                                    })(document, 'script');
+                                 </script>
+                                 <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                                 <!-- City版安装代码已完成 -->
+                            </div>
+                        </div>
+                    <% } %>
+
+                <% } %>
+            </div>
+
+          <%- partial('_partial/sidebar') %>
+
+        <%} %>
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="<%= config.description %>">
+    <meta name="keywords"  content="<%= config.keywords %>">
+    <meta name="theme-color" content="<%= theme.chrome_tab_theme_color %>">
+    <title>
+        <% if (page.title) { %>
+          <%= page.title + ' - ' + config.title + ' | Blog' %>
+        <% } else{%>
+          <%= config.title + ' | Blog' %>
+        <% } %>
+    </title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
+
+    <!-- Bootstrap Core CSS -->
+    <%- css('css/bootstrap.min.css') %>
+
+    <!-- Custom CSS --> 
+    <%- css('css/cheng.min.css')%>
+    <%- css('css/donate.css')%>
+    
+    <!-- Pygments Highlight CSS -->
+    <%- css('css/highlight') %>
+    <%- css('css/widget')%>
+    <%- css('css/rocket')%>
+    <%- css('css/signature')%>
+    <%- css('css/toc')%>
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!--不蒜子网页计数器-->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+</head>
