@@ -1,0 +1,33 @@
+language: node_js
+node_js: stable
+
+branches:
+  only:
+  - master
+
+before_install:
+- export TZ='Asia/Shanghai'
+- git config --global user.name "asasw"
+- git config --global user.email ${EMAIL}
+- npm install -g hexo-cli
+- npm install
+
+script:
+- hexo g
+
+after_success:
+- git clone https://github.com/asasw/asasw.github.io.git ./Blog
+- cp -rf ./Blog/.git/ ./Blog/CNAME  ./public/
+- cd public
+- git add -A
+- git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"
+- git push --force https://${ACCESS}@github.com/asasw/asasw.github.io.git HEAD:master
+
+# configure notifications (email, IRC, campfire etc)
+# please update this section to your needs!
+# https://docs.travis-ci.com/user/notifications/
+notifications:
+  email:
+    - blog@cheng.cf
+  on_success: always
+  on_failure: always
